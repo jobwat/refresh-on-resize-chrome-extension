@@ -1,0 +1,23 @@
+{
+  "name": "Refresh on resize",
+  "description": "Track the window resizing, refresh location with the correponding _device=<device> parameter",
+  "version": "0.1",
+  "permissions": [
+    "activeTab", 
+    "tabs"
+  ], 
+	"content_scripts": [
+		{
+			"js": ["contentscript.js"],
+			"run_at": "document_start",
+			"matches": [
+				"http://localhost:3000/*"
+			]
+		}
+	],  
+  "background": {
+		"scripts": ["background.js"],
+		"persistent": true    
+  },  
+  "manifest_version": 2
+}
